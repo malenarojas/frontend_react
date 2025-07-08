@@ -1,4 +1,6 @@
 import { useFetchPropiedades } from '../../hooks/useFecthPropiedades';
+import PropiedadCard from './PropiedadCard';
+
 
 function ProductList() {
   const { propiedades, loading } = useFetchPropiedades();
@@ -8,11 +10,14 @@ function ProductList() {
   return (
     <div>
       <h2>Lista de propiedades</h2>
-      <ul>
-        {propiedades.map((p) => (
-          <li key={p.id}>{p.title}</li>
+       <ul className="space-y-4">
+         {propiedades.map((p) => (
+          <li key={p.id}>
+            <PropiedadCard propiedad={p} />
+          </li>
         ))}
-      </ul>
+       </ul>
+
     </div>
   );
 }
