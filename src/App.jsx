@@ -18,9 +18,9 @@ function ThemeToggle(){
 function App() {
 
   return (
-  
-         <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem' }}>
       <h2>Ejemplo prueba David</h2>
+
       <Counter />
       <PropiedadList/>
       <AgentsList/>
