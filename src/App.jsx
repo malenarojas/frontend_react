@@ -19,9 +19,12 @@ function App() {
   return (
   
          <div style={{ padding: '2rem' }}>
-      <h2>Ejemplo Zustand – Contador Global</h2>
+      <h2>Ejemplo prueba David</h2>
       <Counter />
       <PropiedadList/>
+      <div>
+        <h1>Texto de prueba</h1>
+      </div>
     </div>  
   )
 }
