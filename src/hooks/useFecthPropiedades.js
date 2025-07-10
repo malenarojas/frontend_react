@@ -9,7 +9,7 @@ export const useFetchPropiedades = () => {
   useEffect(() => {
     getallpropiedades()
       .then((res) => {
-      console.log('📦 FULL RESPONSE:', res);
+      console.log('📦 FULL RESPONSE Propiedades:', res);
       console.log('📦 res.data:', res.data);
       setPropiedades(res.data);
     })

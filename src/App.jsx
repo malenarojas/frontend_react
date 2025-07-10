@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './Counter.jsx';
+import AgentsList from './features/agents/AgenteList.jsx';
 import { useTheme } from './theme-context.jsx';
 
 import PropiedadList from './features/propiedades/PropiedadList.jsx';
@@ -22,9 +23,10 @@ function App() {
       <h2>Ejemplo prueba David</h2>
       <Counter />
       <PropiedadList/>
-      <div>
-        <h1>Texto de prueba</h1>
-      </div>
+      <AgentsList/>
+      <h1 className="text-3xl font-bold underline">
+      Hello world!sfvsdvsdvsdv
+    </h1>
     </div>  
   )
 }
