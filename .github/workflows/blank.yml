@@ -1,8 +1,8 @@
-# This is a basic workflow to help you get started with Actions
+# nombre a nuestro flujo de trabvajo 
 
 name: CI
 
-# Controls when the workflow will run
+# Controls de eventos para ejecutar el flujo de trabajo
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -10,27 +10,30 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows you to run this workflow manually from the Actions tab// permite activar manualmente la ejecución de un flujo de trabajo desde la interfaz de usuario de GitHub
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run con los pasos definidos 
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # The type of runner that the job will run on// en que maquina vitual debe eejcutrase este flujo de trabajo va depender del hosting comprado
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # pasos que debe seguir para el flujo de trabajo automatizado
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+       - name: Checkout Repository
+         uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      -  name: Set up Node.js
+         uses: actions/setup-node@v4
+         with:
+          node-version: '20' # Asegúrate de que esta versión de Node.js sea compatible con tus dependencias
+          cache: 'npm' # O 'yarn' si usas yarn, o 'pnpm' si usas pnpm
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      -  name: Install Dependencies
+         run: npm install # O 'yarn install' si usas yarn, o 'pnpm install' si usas pnpm
+
+      -  name: Build React App
+         run: npm run build # Este comando ejecuta 'vite build' según tu package.json
+      
