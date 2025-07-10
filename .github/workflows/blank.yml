@@ -25,15 +25,15 @@ jobs:
        - name: Checkout Repository
          uses: actions/checkout@v4
 
-      -  name: Set up Node.js
+       - name: Set up Node.js
          uses: actions/setup-node@v4
          with:
           node-version: '20' # Asegúrate de que esta versión de Node.js sea compatible con tus dependencias
           cache: 'npm' # O 'yarn' si usas yarn, o 'pnpm' si usas pnpm
 
-      -  name: Install Dependencies
+       - name: Install Dependencies
          run: npm install # O 'yarn install' si usas yarn, o 'pnpm install' si usas pnpm
 
-      -  name: Build React App
+       - name: Build React App
          run: npm run build # Este comando ejecuta 'vite build' según tu package.json
       
