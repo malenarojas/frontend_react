@@ -36,4 +36,58 @@ jobs:
 
        - name: Build React App
          run: npm run build # Este comando ejecuta 'vite build' según tu package.json
+
+      # --- Paso de Despliegue (Elige uno o ajusta según tu necesidad) ---
+      # Aquí es donde realmente "despliegas" tu aplicación.
+      # La forma de desplegar dependerá de tu proveedor de hosting.
+
+      # Ejemplo 1: Despliegue a GitHub Pages (si tu proyecto es para GitHub Pages)
+      # Ten en cuenta que para GitHub Pages, a menudo necesitas la carpeta `docs` o la rama `gh-pages`.
+      # Si tu `vite.config.js` no configura la salida a `docs`, puedes copiarla.
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./dist # La carpeta que Vite genera por defecto
+
+      # Ejemplo 2: Despliegue a Netlify (requiere token de Netlify)
+      # - name: Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v2.0.0
+      #   with:
+      #     publish-dir: './dist'
+      #     production-branch: 'main' # Tu rama de producción
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-message: "Deploy from GitHub Actions"
+      #     enable-commit-comment: true
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} # Debes configurar esto en tus secretos de GitHub
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} # Debes configurar esto en tus secretos de GitHub
+
+      # Ejemplo 3: Despliegue a Vercel (requiere token de Vercel)
+      # - name: Deploy to Vercel
+      #   uses: amondnet/vercel-action@v20
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Debes configurar esto en tus secretos de GitHub
+      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Debes configurar esto en tus secretos de GitHub
+      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Debes configurar esto en tus secretos de GitHub
+      #     working-directory: ./ # Donde está tu proyecto
+      #     build-env: | # Variables de entorno para la construcción en Vercel
+      #       NODE_ENV=production
+      #   env:
+      #     NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }} # Si tienes variables de entorno
+
+      # Ejemplo 4: Despliegue a S3 (AWS)
+      # - name: Deploy to S3
+      #   uses: jakejarvis/s3-sync-action@master
+      #   with:
+      #     args: --acl public-read --follow-symlinks --delete
+      #   env:
+      #     AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: 'us-east-1' # Tu región de AWS
+      #     SOURCE_DIR: 'dist' # La carpeta que Vite genera
+
+       - name: Deployment Complete
+         run: echo "Deployment process finished. Check your hosting provider for status."
       
