@@ -71,10 +71,10 @@ jobs:
            vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Debes configurar esto en tus secretos de GitHub
            vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Debes configurar esto en tus secretos de GitHub
            working-directory: ./ # Donde está tu proyecto
-           build-env: | # Variables de entorno para la construcción en Vercel
-             NODE_ENV=production
-         env:
-           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }} # Si tienes variables de entorno
+           #build-env: | # Variables de entorno para la construcción en Vercel
+           #  NODE_ENV=production
+        # env:
+        #   NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }} # Si tienes variables de entorno
 
       # Ejemplo 4: Despliegue a S3 (AWS)
       # - name: Deploy to S3
