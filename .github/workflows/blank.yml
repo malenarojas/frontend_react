@@ -38,6 +38,5 @@ jobs:
         # Si necesitas variables de entorno, descomenta lo siguiente:
         # env:
         #   NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-
       - name: Deployment Complete
         run: echo "Deployment process finished. Check your hosting provider for status."
