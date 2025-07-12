@@ -63,18 +63,18 @@ jobs:
       #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} # Debes configurar esto en tus secretos de GitHub
       #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} # Debes configurar esto en tus secretos de GitHub
 
-      # Ejemplo 3: Despliegue a Vercel (requiere token de Vercel)
-      # - name: Deploy to Vercel
-      #   uses: amondnet/vercel-action@v20
-      #   with:
-      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Debes configurar esto en tus secretos de GitHub
-      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Debes configurar esto en tus secretos de GitHub
-      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Debes configurar esto en tus secretos de GitHub
-      #     working-directory: ./ # Donde está tu proyecto
-      #     build-env: | # Variables de entorno para la construcción en Vercel
-      #       NODE_ENV=production
-      #   env:
-      #     NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }} # Si tienes variables de entorno
+         Ejemplo 3: Despliegue a Vercel (requiere token de Vercel)
+       - name: Deploy to Vercel
+         uses: amondnet/vercel-action@v20
+         with:
+           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Debes configurar esto en tus secretos de GitHub
+           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Debes configurar esto en tus secretos de GitHub
+           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Debes configurar esto en tus secretos de GitHub
+           working-directory: ./ # Donde está tu proyecto
+           build-env: | # Variables de entorno para la construcción en Vercel
+             NODE_ENV=production
+         env:
+           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }} # Si tienes variables de entorno
 
       # Ejemplo 4: Despliegue a S3 (AWS)
       # - name: Deploy to S3

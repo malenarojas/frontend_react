@@ -1,33 +1,22 @@
 import './App.css';
-import Counter from './Counter.jsx';
-import AgentsList from './features/agents/AgenteList.jsx';
-import { useTheme } from './theme-context.jsx';
 
-import PropiedadList from './features/propiedades/PropiedadList.jsx';
+import Navbar from './components/Navbar.jsx';
+import Century21Dashboard from './pages/Home.jsx';
+import AppRoutes from './Routes';
 
-function ThemeToggle(){
-    const { dark, toggle } = useTheme();
-     return (
-    <div style={{ background: dark ? '#333' : '#eee', color: dark ? '#eee' : '#000' }}>
-      <p>Modo actual: {dark ? 'Oscuro' : 'Claro'}</p>
-      <button onClick={toggle}>Cambiar Tema</button>
+function App() {
+  return (
+    <div>
+      <Navbar /> 
+      <AppRoutes />
+      <Century21Dashboard />
+      <div className="bg-blue-500 text-white p-4 rounded">Probando Tailwind</div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </div>
   );
 }
 
-function App() {
+export default App;
 
-  return (
-  
-      <div style={{ padding: '2rem' }}>
-      <h2>Ejemplo prueba conflicto de malena </h2>
-      <Counter />
-      <PropiedadList/>
-      <AgentsList/>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!sfvsdvsdvsdv
-    </h1>
-    </div>  
-  )
-}
-export default App
