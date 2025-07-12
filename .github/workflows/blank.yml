@@ -63,7 +63,7 @@ jobs:
       #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} # Debes configurar esto en tus secretos de GitHub
       #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} # Debes configurar esto en tus secretos de GitHub
 
-         Ejemplo 3: Despliegue a Vercel (requiere token de Vercel)
+       #  Ejemplo 3: Despliegue a Vercel (requiere token de Vercel)
        - name: Deploy to Vercel
          uses: amondnet/vercel-action@v20
          with:
